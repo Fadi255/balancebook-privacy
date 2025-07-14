@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <title>Privacy Policy - BalanceBook</title>
@@ -13,12 +13,7 @@
       margin: auto;
       background-color: #f8f9fa;
       color: #333;
-    }
-    h1, h2 {
-      color: #111;
-    }
-    ul {
-      margin-left: 20px;
+      direction: ltr;
     }
     nav {
       margin-bottom: 20px;
@@ -29,16 +24,37 @@
       color: #0066cc;
       font-weight: bold;
     }
+    h1, h2 {
+      color: #111;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    code {
+      background: #e9ecef;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
       color: #666;
     }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      nav a {
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index_ar.html">Arabic</a>
+  <nav aria-label="Language switcher">
+    <a href="index_ar.html">العربية</a>
     <a href="index_en.html">English</a>
     <a href="index_fr.html">Français</a>
     <a href="index_es.html">Español</a>
@@ -52,37 +68,59 @@
   <h2>1. Information We Collect</h2>
   <ul>
     <li><strong>Personal Data</strong>: Name, email address, and phone number.</li>
-    <li><strong>Account and Financial Transaction Data</strong>: Includes amounts of income, expenses, and dates.</li>
+    <li><strong>Account &amp; Transaction Data</strong>: Includes amounts of income, expenses, and dates.</li>
   </ul>
 
   <h2>2. How We Use Your Data</h2>
-  <p>We use this data to improve user experience, provide technical support, and analyze usage to develop better financial features.</p>
+  <p>We use this data to improve user experience, provide technical support, and analyze usage in order to develop better financial features.</p>
 
-  <h2>3. Data Storage and Protection</h2>
-  <p>All data is stored <strong>locally</strong> in an SQLite database on your device. We do not send this data to any external server unless you explicitly consent (e.g., subscribing to a cloud version in the future). Data inside the SQLite database is encrypted using local mechanisms.</p>
+  <h2>3. Data Storage &amp; Protection</h2>
+  <p>
+    All data is stored <strong>locally</strong> in an encrypted SQLite database on your device.  
+    We do not send this data to external servers unless you explicitly opt in to cloud sync in a future version.  
+    Local encryption methods ensure that your data remains secure.
+  </p>
 
   <h2>4. Permissions</h2>
   <ul>
-    <li><code>INTERNET</code>: For downloading updates and backups in the future.</li>
+    <li><code>INTERNET</code>: For downloading updates and backups.</li>
+    <li><code>CAMERA</code>: To scan barcodes only. No photos are captured or stored.</li>
     <li>No other “dangerous” permissions are requested in this version.</li>
   </ul>
 
   <h2>5. Data Sharing</h2>
   <p>
-    We do not share your personal information with third parties without your explicit permission. In case of logging out or automatic synchronization, your financial and personal data may be uploaded to external services such as Firebase to ensure its preservation and synchronization across your devices. We use these services fully complying with security and privacy standards to protect your data.
+    We do not share your personal information with third parties without your explicit consent.  
+    If you choose to enable sync, your data may be uploaded to our secure cloud service (e.g., Firebase) to keep your information backed up and synchronized across devices, fully complying with industry-standard security practices.
   </p>
 
-  <h2>6. User Rights</h2>
+  <h2>6. Delete Account &amp; Data</h2>
+  <p>You can permanently delete your account and all associated data from within the app:</p>
+  <ol>
+    <li>
+      Tap the “Delete Account” button in Settings. Upon confirmation, the app will:
+      <ul>
+        <li>Delete your authentication record (Firebase Auth).</li>
+        <li>Remove all transaction, invoice, and product data from Firestore.</li>
+        <li>Erase any files stored in Firebase Storage.</li>
+        <li>Delete the local SQLite database from your device.</li>
+      </ul>
+      You will receive an in‑app confirmation once the process completes.
+    </li>
+  </ol>
+  <p><strong>Note:</strong> This action is irreversible. Once confirmed, your account and data cannot be recovered.</p>
+
+  <h2>7. User Rights</h2>
   <ul>
-    <li>You have the right to view all your data within the app and delete it (using the “Clear Data” button in app settings).</li>
-    <li>To request permanent deletion of all your data, please contact us via email: <a href="mailto:balancebook001@gmail.com">balancebook001@gmail.com</a>.</li>
+    <li>You have the right to view and selectively delete your data within the app.</li>
+    <li>Account deletion and data removal can only be performed via the in‑app “Delete Account” option.</li>
   </ul>
 
-  <h2>7. Policy Updates</h2>
-  <p>This policy may be updated from time to time. The “Last Updated” date will be noted at the top of this page.</p>
+  <h2>8. Policy Updates</h2>
+  <p>This policy may be updated from time to time. The “Last Updated” date will be noted at the bottom of this page.</p>
 
   <footer>
-    Last updated: May 1, 2025<br>
+    Last updated: July 14, 2025<br>
     &copy; 2025 BalanceBook. All rights reserved.
   </footer>
 </body>
