@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title>Política de privacidad - BalanceBook</title>
+  <title>Política de Privacidad - BalanceBook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -13,12 +13,7 @@
       margin: auto;
       background-color: #f8f9fa;
       color: #333;
-    }
-    h1, h2 {
-      color: #111;
-    }
-    ul {
-      margin-left: 20px;
+      direction: ltr;
     }
     nav {
       margin-bottom: 20px;
@@ -29,60 +24,103 @@
       color: #0066cc;
       font-weight: bold;
     }
+    h1, h2 {
+      color: #111;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    code {
+      background: #e9ecef;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
       color: #666;
     }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      nav a {
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index_ar.html">Árabe</a>
-    <a href="index_en.html">Inglés</a>
-    <a href="index_fr.html">Francés</a>
+  <nav aria-label="Selector de idioma">
+    <a href="index_ar.html">العربية</a>
+    <a href="index_en.html">English</a>
+    <a href="index_fr.html">Français</a>
     <a href="index_es.html">Español</a>
-    <a href="index_tr.html">Turco</a>
-    <a href="index_hi.html">Hindi</a>
+    <a href="index_tr.html">Türkçe</a>
+    <a href="index_hi.html">हिन्दी</a>
   </nav>
 
-  <h1>Política de privacidad – BalanceBook</h1>
-  <p>Bienvenido a la aplicación <strong>BalanceBook</strong>. Nos comprometemos a proteger su privacidad y la seguridad de su información personal. A continuación, los detalles sobre la recopilación, uso y almacenamiento de datos:</p>
+  <h1>Política de Privacidad – BalanceBook</h1>
+  <p>Bienvenido a la aplicación <strong>BalanceBook</strong>. Nos comprometemos a proteger su privacidad y la seguridad de su información personal. A continuación, se detallan cómo recopilamos, usamos y almacenamos los datos:</p>
 
   <h2>1. Información que recopilamos</h2>
   <ul>
-    <li><strong>Datos personales</strong>: nombre, correo electrónico y número de teléfono.</li>
-    <li><strong>Datos de cuentas y transacciones financieras</strong>: montos de ingresos, gastos y fechas.</li>
+    <li><strong>Datos personales</strong>: Nombre, correo electrónico y número de teléfono.</li>
+    <li><strong>Datos de cuentas y transacciones financieras</strong>: Incluye montos de ingresos, gastos y fechas.</li>
   </ul>
 
   <h2>2. Cómo usamos sus datos</h2>
-  <p>Usamos estos datos para mejorar la experiencia del usuario, proporcionar soporte técnico y analizar el uso para desarrollar mejores características financieras.</p>
+  <p>Utilizamos estos datos para mejorar la experiencia del usuario, brindar soporte técnico y analizar el uso para desarrollar mejores funciones financieras.</p>
 
   <h2>3. Almacenamiento y protección de datos</h2>
-  <p>Todos los datos se almacenan <strong>localmente</strong> en una base de datos SQLite en su dispositivo. No enviamos estos datos a un servidor externo a menos que usted lo consienta explícitamente (por ejemplo, suscribiéndose a una versión en la nube en el futuro). Los datos en la base SQLite están cifrados mediante mecanismos locales.</p>
+  <p>
+    Todos los datos se almacenan <strong>localmente</strong> en una base de datos SQLite cifrada en su dispositivo.  
+    No enviamos estos datos a servidores externos a menos que usted habilite explícitamente la sincronización en la nube en una futura versión.  
+    Utilizamos mecanismos de cifrado local para garantizar la seguridad de sus datos.
+  </p>
 
   <h2>4. Permisos</h2>
   <ul>
-    <li><code>INTERNET</code>: para descargar actualizaciones y copias de seguridad en el futuro.</li>
+    <li><code>INTERNET</code>: Para descargar actualizaciones y copias de seguridad.</li>
+    <li><code>CAMERA</code>: Para escanear códigos de barras solamente. No se capturan ni almacenan fotos.</li>
     <li>No se solicitan otros permisos “peligrosos” en esta versión.</li>
   </ul>
 
   <h2>5. Compartición de datos</h2>
   <p>
-    No compartimos su información personal con terceros sin su consentimiento explícito. En caso de cierre de sesión o sincronización automática, sus datos financieros y personales pueden subirse a servicios externos como Firebase para asegurar su respaldo y sincronización entre sus dispositivos. Usamos estos servicios cumpliendo plenamente con los estándares de seguridad y privacidad para proteger sus datos.
+    No compartimos su información personal con terceros sin su consentimiento explícito.  
+    Si habilita la sincronización, sus datos pueden subirse a nuestro servicio en la nube (por ejemplo, Firebase) para mantenerlos respaldados y sincronizados entre dispositivos, cumpliendo plenamente con los estándares de seguridad.
   </p>
 
-  <h2>6. Derechos de los usuarios</h2>
+  <h2>6. Eliminar cuenta y datos</h2>
+  <p>Puede eliminar permanentemente su cuenta y todos sus datos desde la aplicación:</p>
+  <ol>
+    <li>
+      Presione el botón “Eliminar cuenta” en la pantalla de Configuración. Al confirmar, la aplicación:
+      <ul>
+        <li>Eliminará su registro de autenticación (Firebase Auth).</li>
+        <li>Eliminará todos los datos de transacciones, facturas y productos de Firestore.</li>
+        <li>Borrará cualquier archivo almacenado en Firebase Storage.</li>
+        <li>Eliminará la base de datos local SQLite de su dispositivo.</li>
+      </ul>
+      Recibirá una confirmación dentro de la aplicación una vez finalizado el proceso.
+    </li>
+  </ol>
+  <p><strong>Nota:</strong> Esta acción es irreversible. Una vez eliminada, su cuenta y datos no se pueden recuperar.</p>
+
+  <h2>7. Derechos del usuario</h2>
   <ul>
-    <li>Usted tiene derecho a consultar todos sus datos en la aplicación y eliminarlos (a través del botón “Borrar datos” en la configuración).</li>
-    <li>Para solicitar la eliminación definitiva de todos sus datos, puede contactarnos por correo electrónico: <a href="mailto:balancebook001@gmail.com">balancebook001@gmail.com</a>.</li>
+    <li>Tiene derecho a ver y eliminar sus datos dentro de la aplicación.</li>
+    <li>La eliminación de cuenta y datos solo se puede realizar desde la opción “Eliminar cuenta” en la aplicación.</li>
   </ul>
 
-  <h2>7. Actualización de la política</h2>
-  <p>Esta política puede actualizarse ocasionalmente. La fecha de “Última actualización” se indicará en la parte superior de esta página.</p>
+  <h2>8. Actualizaciones de la política</h2>
+  <p>Esta política puede actualizarse ocasionalmente. La fecha de la última actualización se indica al final de esta página.</p>
 
   <footer>
-    Última actualización: 1 de mayo de 2025<br>
+    Última actualización: 14 de julio de 2025<br>
     &copy; 2025 BalanceBook. Todos los derechos reservados.
   </footer>
 </body>
