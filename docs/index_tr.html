@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <title>Gizlilik Politikası - BalanceBook</title>
@@ -13,12 +13,7 @@
       margin: auto;
       background-color: #f8f9fa;
       color: #333;
-    }
-    h1, h2 {
-      color: #111;
-    }
-    ul {
-      margin-left: 20px;
+      direction: ltr;
     }
     nav {
       margin-bottom: 20px;
@@ -29,60 +24,104 @@
       color: #0066cc;
       font-weight: bold;
     }
+    h1, h2 {
+      color: #111;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    code {
+      background: #e9ecef;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
       color: #666;
     }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      nav a {
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index_ar.html">Arapça</a>
-    <a href="index_en.html">İngilizce</a>
-    <a href="index_fr.html">Fransızca</a>
-    <a href="index_es.html">İspanyolca</a>
+  <nav aria-label="Dil seçici">
+    <a href="index_ar.html">العربية</a>
+    <a href="index_en.html">English</a>
+    <a href="index_fr.html">Français</a>
+    <a href="index_es.html">Español</a>
     <a href="index_tr.html">Türkçe</a>
-    <a href="index_hi.html">Hintçe</a>
+    <a href="index_hi.html">हिन्दी</a>
   </nav>
 
   <h1>Gizlilik Politikası – BalanceBook</h1>
-  <p><strong>BalanceBook</strong> uygulamasına hoş geldiniz. Gizliliğinizi ve kişisel bilgilerinizin güvenliğini korumaya önem veriyoruz. Veri toplama, kullanma ve saklama ile ilgili detaylar aşağıdadır:</p>
+  <p><strong>BalanceBook</strong> uygulamasına hoş geldiniz. Gizliliğinizi korumayı ve kişisel bilgilerinizin güvenliğini sağlamayı taahhüt ediyoruz. Aşağıda verilerin nasıl toplandığı, kullanıldığı ve saklandığına dair detaylar yer almaktadır:</p>
 
   <h2>1. Topladığımız Bilgiler</h2>
   <ul>
-    <li><strong>Kişisel Veriler</strong>: isim, e-posta ve telefon numarası.</li>
-    <li><strong>Hesap ve finansal işlem verileri</strong>: gelir, gider tutarları ve tarihler.</li>
+    <li><strong>Kişisel Veriler</strong>: İsim, e-posta adresi ve telefon numarası.</li>
+    <li><strong>Hesap ve Finansal İşlem Verileri</strong>: Gelir, gider tutarları ve tarihleri gibi bilgiler.</li>
   </ul>
 
   <h2>2. Verilerin Kullanımı</h2>
-  <p>Bu verileri kullanıcı deneyimini geliştirmek, teknik destek sağlamak ve finansal özellikleri geliştirmek için kullanıyoruz.</p>
+  <p>Bu verileri kullanıcı deneyimini geliştirmek, teknik destek sağlamak ve daha iyi finansal özellikler geliştirmek için analiz yapmak amacıyla kullanıyoruz.</p>
 
-  <h2>3. Veri Depolama ve Koruma</h2>
-  <p>Tüm veriler cihazınızda <strong>yerel olarak</strong> SQLite veritabanında saklanır. Veriler, sizin açık onayınız olmadıkça (örneğin gelecekte bulut sürümüne abone olma) harici bir sunucuya gönderilmez. SQLite içindeki veriler yerel mekanizmalarla şifrelenir.</p>
+  <h2>3. Veri Saklama ve Koruma</h2>
+  <p>
+    Tüm veriler <strong>yerel olarak</strong> cihazınızdaki şifrelenmiş bir SQLite veritabanında saklanır.
+    Veriler, siz açıkça bulut senkronizasyonunu etkinleştirmedikçe harici sunuculara gönderilmez.
+    Verilerinizin güvenliğini sağlamak için yerel şifreleme mekanizmaları kullanılır.
+  </p>
 
   <h2>4. İzinler</h2>
   <ul>
-    <li><code>INTERNET</code>: güncellemeleri ve yedeklemeleri indirmek için.</li>
-    <li>Bu sürümde başka “tehlikeli” izinler istenmez.</li>
+    <li><code>INTERNET</code>: Güncellemeleri ve yedekleri indirmek için.</li>
+    <li><code>CAMERA</code>: Sadece barkod taramak için. Herhangi bir fotoğraf çekilmez veya saklanmaz.</li>
+    <li>Bu sürümde başka “tehlikeli” izinler talep edilmemektedir.</li>
   </ul>
 
   <h2>5. Veri Paylaşımı</h2>
   <p>
-    Kişisel bilgilerinizi açık rızanız olmadan üçüncü taraflarla paylaşmıyoruz. Oturum kapatma veya otomatik senkronizasyon durumunda, finansal ve kişisel verileriniz Firebase gibi dış servislerde yedeklenip cihazlarınız arasında senkronize edilebilir. Bu servisleri veri güvenliği ve gizliliği standartlarına tam uyumlu şekilde kullanıyoruz.
+    Açık izniniz olmadan kişisel verilerinizi üçüncü taraflarla paylaşmayız. 
+    Oturum kapatma veya otomatik senkronizasyon durumunda, verileriniz Firebase gibi hizmetlere güvenli şekilde yüklenebilir ve cihazlarınız arasında senkronize edilebilir.
+    Bu hizmetler, veri güvenliğini sağlamak için endüstri standartlarına uygun şekilde kullanılır.
   </p>
 
-  <h2>6. Kullanıcı Hakları</h2>
+  <h2>6. Hesap ve Veri Silme</h2>
+  <p>Hesabınızı ve tüm verilerinizi uygulama üzerinden kalıcı olarak silebilirsiniz:</p>
+  <ol>
+    <li>
+      Ayarlar ekranındaki “Hesabı Sil” düğmesine dokunun. Onayladığınızda uygulama:
+      <ul>
+        <li>Firebase kimlik bilgilerinizi (Auth) siler.</li>
+        <li>Firestore’daki tüm işlem, fatura ve ürün verilerini siler.</li>
+        <li>Firebase Storage üzerindeki tüm dosyaları siler.</li>
+        <li>Yerel SQLite veritabanını cihazınızdan kaldırır.</li>
+      </ul>
+      İşlem tamamlandığında uygulama içinde bir onay bildirimi alırsınız.
+    </li>
+  </ol>
+  <p><strong>Not:</strong> Bu işlem geri alınamaz. Hesabınız ve verileriniz kalıcı olarak silinir.</p>
+
+  <h2>7. Kullanıcı Hakları</h2>
   <ul>
-    <li>Uygulama içinde tüm verilerinizi görüntüleme ve silme hakkınız vardır (Ayarlar’daki “Verileri Sil” butonu ile).</li>
-    <li>Tüm verilerin kalıcı olarak silinmesini talep etmek için e-posta ile bize ulaşabilirsiniz: <a href="mailto:balancebook001@gmail.com">balancebook001@gmail.com</a>.</li>
+    <li>Kullanıcılar verilerini uygulama içinde görüntüleyebilir ve silebilir.</li>
+    <li>Hesap ve veri silme yalnızca uygulama içindeki “Hesabı Sil” seçeneğiyle gerçekleştirilebilir.</li>
   </ul>
 
-  <h2>7. Politika Güncellemeleri</h2>
-  <p>Bu politika zaman zaman güncellenebilir. “Son Güncelleme” tarihi bu sayfanın üst kısmında belirtilir.</p>
+  <h2>8. Politika Güncellemeleri</h2>
+  <p>Bu politika zaman zaman güncellenebilir. Son güncelleme tarihi sayfanın sonunda belirtilmiştir.</p>
 
   <footer>
-    Son güncelleme: 1 Mayıs 2025<br>
+    Son güncelleme: 14 Temmuz 2025<br>
     &copy; 2025 BalanceBook. Tüm hakları saklıdır.
   </footer>
 </body>
